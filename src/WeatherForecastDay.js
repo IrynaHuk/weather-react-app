@@ -28,7 +28,7 @@ export default function WeatherForecastDay(props) {
     <div>
       <div className="WeatherForecast-day">{day()}</div>
       <div>
-        <img src={pic} />
+        <img src={pic} alt="/" />
       </div>
 
       <div className="WeatherForecast-temperatures">
