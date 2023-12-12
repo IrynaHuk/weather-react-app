@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import "./WeatherForecastDay.css";
+import "./Weather.css";
 
 export default function WeatherForecastDay(props) {
-  let [pic, setPic] = useState("");
-  function showPic() {
-    setPic(
-      `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`
-    );
-  }
-  console.log(props.data.weather[0].icon);
   function maxTemperature() {
     let temperature = Math.round(props.data.temp.max);
     return `${temperature}°`;
@@ -28,7 +23,11 @@ export default function WeatherForecastDay(props) {
     <div>
       <div className="WeatherForecast-day">{day()}</div>
       <div>
-        <img src={pic} alt="/" />
+        <img
+          src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+          alt="weather"
+          className="WeatherForecastDay-icon"
+        />
       </div>
 
       <div className="WeatherForecast-temperatures">
